@@ -1,10 +1,15 @@
 import './App.css';
+import Home from './Pages/Home/Home';
+import TopBar from './TopBar/TopBar';
 
 const App = () => {
   return (
-    <div className="App">
-      <h1>Hello World</h1>
-    </div>
+    <>
+    <TopBar/>
+    <Home/>
+    
+    </>
+    
   );
 }
 export default App;
