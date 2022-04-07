@@ -1,3 +1,4 @@
+import React from 'react';
 import './Register.css';
 
 
@@ -14,7 +15,7 @@ export default function Register() {
             />
             <label>Email</label>
             <input 
-                className='email'
+                className='emailInput'
                 type="text"
                 placeholder='Enter your email...'
             />
