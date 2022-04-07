@@ -10,13 +10,13 @@ export default function Register() {
             <input 
                 className='registerInput'
                 type="text"
-                placeholder='Enter your username...'
+                placeholder='Enter your username... '
             />
             <label>Email</label>
             <input 
                 className='email'
                 type="text"
-                placeholder='Enter your email...'
+                placeholder='Enter your email... '
             />
             <label>Password</label>
             <input 
