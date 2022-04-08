@@ -47,6 +47,13 @@
   padding: 0;
   font-weight: 300;
   cursor: pointer;
+  opacity: 0.7;
+  transition: 0.3s;
+  color: #222222;
+}
+
+.topListItem:hover{
+  color:#d3a5a5;
 }
 
 .TopSearchIcon{
