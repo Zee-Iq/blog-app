@@ -15,6 +15,7 @@ const App = () => {
 
     <Register/>
     </> */
+    <>
     <Router>
       <TopBar />
          <Register />
