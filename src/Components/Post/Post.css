@@ -34,6 +34,13 @@
   padding: 4px;
 }
 
-.postCat:hover{
-    background-color: #d3a5a5;
+.postCat:hover {
+  background-color: #d3a5a5;
+}
+
+.postTitle {
+  font-family: "Varela Round", sans-serif;
+  font-size: 1.5em;
+  margin : 1em 0 1.5em 0.35em;
+  cursor: pointer;
 }
