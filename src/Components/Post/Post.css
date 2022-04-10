@@ -44,3 +44,17 @@
   margin : 1em 0 1.5em 0.35em;
   cursor: pointer;
 }
+
+.postDate{
+  color: #46424288;
+}
+
+.postDescription{
+  line-height: 1.39em;
+  margin-top: 2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
