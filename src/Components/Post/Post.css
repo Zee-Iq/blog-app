@@ -34,6 +34,29 @@
   padding: 4px;
 }
 
-.postCat:hover{
-    background-color: #d3a5a5;
+.postCat:hover {
+  background-color: #d3a5a5;
+}
+
+.postTitle {
+  font-family: "Varela Round", sans-serif;
+  font-size: 1.845em;
+  font-weight: 700;
+  color: #222222;
+  margin : 1em 0 1.5em 0.35em;
+  cursor: pointer;
+}
+
+.postDate{
+  color: #46424288;
+}
+
+.postDescription{
+  line-height: 1.39em;
+  margin-top: 2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
