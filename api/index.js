@@ -1,9 +1,7 @@
 const express = require("express");
-const app = express
+const app = express();
 
-app.request("/", (req, res) => {
-    console.log("This is main URL");
-})
+
 
 
 
