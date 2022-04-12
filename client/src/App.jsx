@@ -1,16 +1,17 @@
 import "./App.css";
-
 import TopBar from "./Components/TopBar/TopBar";
-import UserProfile from "./Components/UserProfile/UserProfile";
-
-
+import { BrowserRouter as Router, Route, Switch , Link } from "react-router-dom";
 
 const App = () => {
   return (
-    <>
+    <Router>
       <TopBar />
-    <UserProfile />
-    </>
+      <Switch>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
   );
 };
 export default App;
