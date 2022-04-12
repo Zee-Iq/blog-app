@@ -9,6 +9,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "mongoose": "^6.2.10",
     "nodemon": "^2.0.15"
   }
 }
