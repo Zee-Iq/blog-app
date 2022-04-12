@@ -1,12 +1,14 @@
 import "./App.css";
-import Write from "./Components/Write/Write";
+import Register from "./Components/Register/Register";
 import TopBar from "./Components/TopBar/TopBar";
+
+
 
 const App = () => {
   return (
     <>
       <TopBar />
-      <Write />
+      <Register /> 
     </>
   );
 };
