@@ -1,15 +1,12 @@
-import './App.css';
-import Write from "./Components/Write/Write";
-import TopBar from './Components/TopBar/TopBar';
-
-
-
+import "./App.css";
+import TopBar from "./Components/TopBar/TopBar";
+import UserProfile from "./Components/UserProfile/UserProfile";
 
 const App = () => {
   return (
     <>
-    <TopBar/>
-    <Write />    
+      <TopBar />
+      <UserProfile />
     </>
   );
 };
