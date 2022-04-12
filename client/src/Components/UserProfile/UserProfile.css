@@ -1,0 +1,89 @@
+.settings {
+  display: flex;
+}
+
+.settingsWrapper {
+  flex: 9;
+  padding: 1em;
+}
+
+.settingsTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.settingsPPImg {
+  width: 70px;
+  height: 70px;
+  border-radius: 25%;
+  object-fit: cover;
+  padding: 1em;
+}
+
+.settingsUpdateTitle {
+  font-size: 30px;
+  margin-top: 20px;
+  color: #d3a5a5;
+}
+
+.settingsDeleteTitle {
+  color: #f50000;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+.settingsForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.settingsPP {
+  display: flex;
+  align-items: center;
+  margin-top: 20px 0;
+}
+
+.settingsPPIcon {
+  min-width: 30px;
+  min-height: 30px;
+  border-radius: 50%;
+  background-color: #d3a5a5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.settingsForm > label {
+  font-size: 1em;
+  margin-top: 1em;
+}
+
+.settingsForm > input{
+  color: gray;
+  margin: 0.7em 0;
+  height: 1.5em;
+  border: none;
+}
+
+.settingsSubmit{
+  width: 150px;
+  align-self: center;
+  border: none;
+  border-radius: 1em;
+  padding: 0.795em;
+  background-color: #d3a5a5;
+  color: white;
+  opacity: 0.9;
+  font-size: 1em;
+}
+
+.settingsSubmit:hover{
+  cursor: pointer;
+  background-color: #d3a5a5;
+  color: white;
+  transition: 0.2s;
+  opacity: 1;
+}

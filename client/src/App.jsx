@@ -1,6 +1,7 @@
 import "./App.css";
-import Register from "./Components/Register/Register";
+
 import TopBar from "./Components/TopBar/TopBar";
+import UserProfile from "./Components/UserProfile/UserProfile";
 
 
 
@@ -8,7 +9,7 @@ const App = () => {
   return (
     <>
       <TopBar />
-      <Register /> 
+    <UserProfile />
     </>
   );
 };
