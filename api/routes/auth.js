@@ -4,6 +4,9 @@ const User = require("../models/User");
 const bcrypt = require("bcrypt");
 // Register
 
+
+const sendEmail = require('../utils/mail/mail')
+
 router.post("/register", express.json(), async (req, res) => {
   try {
     const salt = await bcrypt.genSalt(10);
@@ -15,6 +18,14 @@ router.post("/register", express.json(), async (req, res) => {
     });
 
     const user = await newUser.save();
+
+
+
+
+    // sending email
+    sendEmail() 
+
+
     res.status(200).json(user);
   } catch (err) {
     console.log(err);
