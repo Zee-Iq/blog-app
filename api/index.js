@@ -8,12 +8,7 @@ const postRoute = require("./routes/posts")
 dotenv.config()
 
 mongoose
-.connect(process.env.MONGO_URL, {
-    useNewUrlParcer: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true
-
-}).then(console.log("Connected to MongoDB"))
+.connect(process.env.MONGO_URL,).then(console.log("Connected to MongoDB"))
 .catch(err=>console.log(err));
 
 app.use("/api/auth", authRoute)
