@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,300&family=Roboto:wght@100;300;400;500&family=Varela&family=Varela+Round&display=swap");
+
+.singlePost {
+  flex: 9;
+}
+
+.singlePostImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 1em;
+}
+
+.singlePostWrapper {
+  padding: 1em;
+  padding-right: 0;
+}
+
+.singlePostTitle {
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  font-size: 2em;
+}
+
+.singlePostEdit {
+  float: right;
+  font-size: 0.7em;
+  cursor: pointer;
+  padding: 0 0.5em;
+}
+
+.singlePostIcon {
+  padding: 0 0 0 0.5em;
+  color: #222222;
+  opacity: 0.3;
+}
+
+.singlePostIcon:first-child:hover {
+  opacity: 1;
+  transition: 0.2s;
+  padding: 0 0.25em;
+}
+
+.singlePostIcon:last-child:hover {
+  opacity: 1;
+  transition: 0.2s;
+  padding: 0 0.25em;
+  color: rgb(223, 89, 89);
+}
+
+.singlePostInfo {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-family: "josefin sans", sans-serif;
+  opacity: 0.6;
+}
+
+.singlePostDescription {
+  font-family: "josefin sans", sans-serif;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #666;
+  line-height: 25px;
+}
+
+.singlePostDescription::first-letter{
+    font-size: 2em;
+    color: #666;
+}
