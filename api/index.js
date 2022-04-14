@@ -16,11 +16,7 @@ app.get('/greeting', (req,res) => {
 app.use(express.json());
 
 mongoose
-  .connect(process.env.MONGO_URL, {
-    useNewUrlParcer: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-  })
+  .connect(process.env.MONGO_URL, )
   .then(console.log("Connected to MongoDB"))
   .catch((err) => console.log(err));
 
