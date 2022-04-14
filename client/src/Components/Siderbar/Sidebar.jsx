@@ -42,6 +42,3 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
-
-/* test */
-/* test 41234654654 */
