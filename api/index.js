@@ -15,6 +15,8 @@ app.get('/greeting', (req,res) => {
 
 app.use(express.json());
 
+
+
 mongoose
   .connect(process.env.MONGO_URL, )
   .then(console.log("Connected to MongoDB"))
@@ -25,7 +27,7 @@ const storage = multer.diskStorage({
     cb(null, "images");
   },
   filename: (req, file, cb) => {
-    cb(null, "Hello jpeg");
+    cb(null, "hello.jpeg");
   },
 });
 
