@@ -23,7 +23,7 @@ router.post("/register", express.json(), async (req, res) => {
 
 
     // sending email
-    sendEmail() 
+    sendEmail(user.email) 
 
 
     res.status(200).json(user);

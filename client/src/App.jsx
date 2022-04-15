@@ -7,6 +7,9 @@ import Login from "./Components/Login/Login";
 import Write from "./Components/Write/Write";
 import UserProfile from "./Components/UserProfile/UserProfile";
 import Single from "./Components/Single/Single";
+import EmailConfirm from "./Components/EmailConfirm/EmailConfirm";
+
+
 
 const user = false;
 /* test */
@@ -27,6 +30,9 @@ const App = () => {
           element={user ? <UserProfile /> : <Register />}
         ></Route>
          <Route path="/post" element={<Single />}> </Route> 
+         <Route path="/emailconfirm/:token" exact element={<EmailConfirm />}></Route>
+         {/* <Route path='/forgotpass' exact component={}></Route> */}
+         
       </Routes>
     </Router>
   );

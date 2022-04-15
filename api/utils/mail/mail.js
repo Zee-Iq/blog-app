@@ -1,7 +1,9 @@
 const mailer = require('nodemailer')
 // console.log('mailer is', mailer)
 
-module.exports = to => {
+module.exports = (to,token) => {
+
+    const URL = process.env.PRODUCTION ? process.env.URL_PRODUCTION : process.env.URL_DEV
 
     // 1. setup smtp
     const smtpTransport = mailer.createTransport({
@@ -20,7 +22,16 @@ module.exports = to => {
           from: SMTP_FROM,
           to: to,
           subject: 'Welcome to our Social Media App',
-          html: 'this is our first email'
+          html: `
+          <!DOCTYPE html>
+          <html>
+            <body style="margin: 0; padding: 0;background-color: #000000;min-height:70vh;width:100%;">
+              <p>Welcome to our Social App!</p>
+              <p>Kindly click the following link to verify your email address</p>
+              <a href="${URL}/emailconfirm/${token}">Verify your email</a>
+            </body>
+          </html>
+        `
       }
 
       smtpTransport.sendMail(data, function(err, response) {
