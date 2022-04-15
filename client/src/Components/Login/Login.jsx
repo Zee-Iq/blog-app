@@ -11,6 +11,7 @@ export default function Login() {
         <label>Password</label>
         <input className="loginInput" type="password" placeholder="Enter your password..." />
         <button className="loginButton">Login</button>
+        <Link to="/forgotpass">Forgot pass</Link>
       </form>
         <button className="loginRegisterButton"><Link className="link" to="/register">Register</Link></button>
     </div>

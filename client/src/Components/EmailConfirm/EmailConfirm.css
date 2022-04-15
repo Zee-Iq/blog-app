@@ -1,0 +1,6 @@
+.email-container {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    background-color: aqua;
+}
