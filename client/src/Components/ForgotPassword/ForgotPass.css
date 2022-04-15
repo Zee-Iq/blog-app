@@ -1,8 +1,12 @@
 
 .password-container {
-    background-color: black;
-    /* display: grid;
+ 
+    display: grid;
     place-content: center;
     min-height: 100vh;
-    color: red; */
+ 
+}
+
+button {
+    margin-top: 10px;
 }

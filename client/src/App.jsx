@@ -9,8 +9,9 @@ import UserProfile from "./Components/UserProfile/UserProfile";
 import Single from "./Components/Single/Single";
 import EmailConfirm from "./Components/EmailConfirm/EmailConfirm";
 import ForgotPass from "./Components/ForgotPassword/ForgotPass";
+import ChangePass from "./Components/ChangePass/ChangePass";
 
-const user = true;
+const user = false;
 /* test */
 const App = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
           element={<EmailConfirm />}
         ></Route>
         <Route path="/forgotpass" element={<ForgotPass/>} exact></Route>
+        <Route path="/changepass/:token" element={<ChangePass/>} exact></Route>
       </Routes>
     </Router>
   );
