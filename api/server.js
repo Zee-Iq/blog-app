@@ -1,9 +1,15 @@
 const express = require("express");
 const app = express();
+const dotenv = require("dotenv");
+const mongoose = require("mongoose");
 
-app.use("/", (req,res) =>{
-    console.log("Hello from /")
-})
+dotenv.config();
+
+/* mongoose.connect("mongodb:")
+ */
+app.use("/", (req, res) => {
+  console.log("Hello from /");
+});
 
 app.listen("5500", () => {
   console.log("server is running at port 5500");
