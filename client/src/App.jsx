@@ -10,7 +10,7 @@ import Single from "./Components/Single/Single";
 import EmailConfirm from "./Components/EmailConfirm/EmailConfirm";
 import ForgotPass from "./Components/ForgotPassword/ForgotPass";
 
-const user = false;
+const user = true;
 /* test */
 const App = () => {
   return (
