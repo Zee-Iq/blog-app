@@ -11,7 +11,7 @@ export default function Login() {
         <label>Password</label>
         <input className="loginInput" type="password" placeholder="Enter your password..." />
         <button className="loginButton">Login</button>
-        <Link to="/forgotpass">Forgot password?</Link>
+        <Link style={{textDecoration:"none", color:"black", textAlign:"center", marginTop:"10px", fontSize:"0.9rem"}} to="/forgotpass">Forgot password?</Link>
       </form>
         <button className="loginRegisterButton"><Link className="link" to="/register">Register</Link></button>
     </div>
