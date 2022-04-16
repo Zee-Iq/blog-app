@@ -1,4 +1,6 @@
 import "./Write.css";
+import WriteCopy from "./WriteCopy";
+
 
 const Write = () => {
   return (
@@ -26,8 +28,10 @@ const Write = () => {
         </div>
         <button className="writeSubmit">Publish</button>
       </form>
+      <WriteCopy />
     </div>
   );
 };
 
 export default Write;
+

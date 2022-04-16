@@ -1,0 +1,42 @@
+
+
+.tags {
+    font-family: "Varela Round", sans-serif;
+    font-size: 14px;
+    color: #222222;
+    opacity: 0.7;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    
+  
+    line-height: 35px;
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    border: grey solid 2px;
+    border-radius: 5px;
+    padding: 4px;
+  }
+
+  .tag {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    height: 25px;
+    margin: 2px 5px 2px 0px;
+
+  }
+  
+  .tag:hover {
+    background-color: #d3a5a5;
+
+  }
+
+  .tag span {
+      display: flex;
+      margin: 10px;
+  }

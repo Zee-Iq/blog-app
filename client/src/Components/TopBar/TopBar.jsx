@@ -3,7 +3,7 @@ import Login from "../Login/Login";
 import "./topbar.css";
 
 const TopBar = () => {
-  const user = false;
+  const user = true;
 
   return (
     <div className="top">

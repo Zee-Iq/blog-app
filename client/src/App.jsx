@@ -7,14 +7,18 @@ import Login from "./Components/Login/Login";
 import Write from "./Components/Write/Write";
 import UserProfile from "./Components/UserProfile/UserProfile";
 import Single from "./Components/Single/Single";
+import Tags from "./Components/Write/WriteCopy";
 
-const user = false;
+const user = true;
 /* test */
 const App = () => {
   return (
     <Router>
       <TopBar />
       <Routes>
+        <Route path="/WriteCopy" element={<Tags/>}>
+
+        </Route>
         <Route path="/" element={<Homepage />}></Route>
         <Route
           path="/register"
@@ -29,6 +33,7 @@ const App = () => {
          <Route path="/post" element={<Single />}> </Route> 
       </Routes>
     </Router>
+    
   );
 };
 export default App;
