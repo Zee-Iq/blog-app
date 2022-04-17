@@ -1,21 +1,21 @@
 const router = require("express").Router();
-const User = require("../models/User");
-const Post = require("../models/Post");
+const User = require("../models/UserModel");
+const Post = require("../models/PostModel");
+const { json } = require("express");
 
-//Create post
-
+//CREATE POST
 router.post("/", async (req, res) => {
   const newPost = new Post(req.body);
   try {
     const savedPost = await newPost.save();
     res.status(200).json(savedPost);
-  } catch (error) {
-    res.status(500).json(error);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
-//Update post
-
+//UPDATE POST
+// Logic --> 1.Find the Post --> 2. Check if Username of the post matches the username of the author --> If they match... the post  can updated
 router.put("/:id", async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
@@ -28,20 +28,19 @@ router.put("/:id", async (req, res) => {
           },
           { new: true }
         );
-
         res.status(200).json(updatedPost);
-      } catch (error) {
-        req.status(500).json(error);
+      } catch (err) {
+        res.status(500).json(err);
       }
     } else {
-      res.status(401).json("You can update only your post!");
+      res.status(401).json("Unauthorized action, you can update only your post!");
     }
-  } catch (error) {
-    req.status(500).json(error);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
-//Delete Post
+//DELETE POST
 
 router.delete("/:id", async (req, res) => {
   try {
@@ -49,37 +48,32 @@ router.delete("/:id", async (req, res) => {
     if (post.username === req.body.username) {
       try {
         await post.delete();
-
         res.status(200).json("Post has been deleted...");
-      } catch (error) {
-        req.status(500).json(error);
+      } catch (err) {
+        res.status(500).json(err);
       }
     } else {
       res.status(401).json("You can delete only your post!");
     }
-  } catch (error) {
-    req.status(500).json(error);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
-//Get Post
-
+//GET POST
 router.get("/:id", async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
-
     res.status(200).json(post);
-  } catch (error) {
-    res.status(500).json(error);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
-//Get all posts
-
+//GET ALL POSTS
 router.get("/", async (req, res) => {
   const username = req.query.user;
   const catName = req.query.cat;
-
   try {
     let posts;
     if (username) {
@@ -94,11 +88,11 @@ router.get("/", async (req, res) => {
       posts = await Post.find();
     }
     res.status(200).json(posts);
-
-    res.status(200).json(post);
-  } catch (error) {
-    res.status(500).json(error);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
+
+module.exports = router;
 
 module.exports = router;

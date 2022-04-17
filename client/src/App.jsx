@@ -7,9 +7,7 @@ import Login from "./Components/Login/Login";
 import Write from "./Components/Write/Write";
 import UserProfile from "./Components/UserProfile/UserProfile";
 import Single from "./Components/Single/Single";
-import EmailConfirm from "./Components/EmailConfirm/EmailConfirm";
-
-
+import Tags from "./Components/Tags/Tags";
 
 const user = true;
 /* test */
@@ -18,6 +16,7 @@ const App = () => {
     <Router>
       <TopBar />
       <Routes>
+        <Route path="/tagexample" element={<Tags />} > </Route>
         <Route path="/" element={<Homepage />}></Route>
         <Route
           path="/register"
