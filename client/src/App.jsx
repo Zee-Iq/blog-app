@@ -8,7 +8,7 @@ import Write from "./Components/Write/Write";
 import UserProfile from "./Components/UserProfile/UserProfile";
 import Single from "./Components/Single/Single";
 
-const user = true;
+const user = false;
 
 const App = () => {
   return (
