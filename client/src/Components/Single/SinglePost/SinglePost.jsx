@@ -1,35 +1,47 @@
 import "./SinglePost.css";
+import { useLocation, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const SinglePost = () => {
+  const location = useLocation();
+ /*  const path = location.pathname.split("/")[2]; */
+  const { postId } = useParams()
+  const [post, setPost] = useState({});
+
+console.log(postId);
+
+  useEffect(() => {
+    const getPost = async () => {
+      const res = await axios.get("/posts/" + postId);
+      setPost(res.data);
+      console.log(res)
+    };
+    getPost();
+  }, [postId]);
+
   return (
     <div className="singlePost">
       <div className="singlePostWrapper">
-        <img
-          src="https://i.picsum.photos/id/143/3600/2385.jpg?hmac=gSMmnYrmuP5BJ47kmErfYdYu1L1GLePM1SNm-D2lqiA"
-          alt=""
-          className="singlePostImg"
-        />
+        {post.postImg && (
+          <img src={post.postImg} alt="" className="singlePostImg" />
+        )}
         <h1 className="singlePostTitle">
-          Lorem ipsum dolor sit amet.
+          {post.title}
           <div className="singlePostEdit">
             <i className="singlePostIcon fa-solid fa-pen-to-square"></i>
-            <i class="singlePostIcon fa-solid fa-trash-can"></i>
+            <i className="singlePostIcon fa-solid fa-trash-can"></i>
           </div>
         </h1>
         <div className="singlePostInfo">
           <span className="singlePostAuthor">
-            Author: <b>Zeeshan</b>
+            Author: <b>{post.username}</b>
           </span>
-          <span className="singlePostDate "> 1 hour ago</span>
+          <span className="singlePostDate ">
+            {new Date(post.createdAt).toDateString()}
+          </span>
         </div>
-          <p className="singlePostDescription">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam aut
-            et inventore praesentium enim voluptatum magnam porro sint commodi
-            sunt, iusto architecto explicabo assumenda ipsa nam delectus? Ut
-            fugiat assumenda velit maiores harum amet qui laudantium nostrum,
-            sapiente magni at inventore minus esse quam molestias iste.
-            Assumenda minus perspiciatis possimus?
-          </p>
+        <p className="singlePostDescription">{post.desc}</p>
       </div>
     </div>
   );
