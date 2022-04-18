@@ -33,48 +33,48 @@ const UserSchema = new mongoose.Schema({
 
 
 
-userSchema.methods.generateToken = async function(expiration, dbField) {
+// userSchema.methods.generateToken = async function(expiration, dbField) {
 
-    const user = this;
+//     const user = this;
 
-    // console.log('inside generate token: user is', user)
+//     // console.log('inside generate token: user is', user)
 
-    // console.log('user._id converted', user._id.toHexString());
+//     // console.log('user._id converted', user._id.toHexString());
 
-    const token = jwt.sign({id: user._id.toHexString()}, process.env.SECRET, {
-        expiresIn: expiration
-    })
-    // console.log('token is', token)
+//     const token = jwt.sign({id: user._id.toHexString()}, process.env.SECRET, {
+//         expiresIn: expiration
+//     })
+//     // console.log('token is', token)
 
-    if (dbField) {
+//     if (dbField) {
 
-        // user.token
-        // user.resetToken
-        // user.refreshToken
-        // user.emailVerifyToken
+//         // user.token
+//         // user.resetToken
+//         // user.refreshToken
+//         // user.emailVerifyToken
 
-        user[dbField] = token;
-        await user.save()
-        return user
+//         user[dbField] = token;
+//         await user.save()
+//         return user
 
-    } else { // just return the token
+//     } else { // just return the token
 
-        return token
-    }
-
-
-}
+//         return token
+//     }
 
 
+// }
 
-userSchema.statics.getPayload = async token => {
 
-    try {
-        return jwt.verify(token, process.env.SECRET)
+
+// userSchema.statics.getPayload = async token => {
+
+//     try {
+//         return jwt.verify(token, process.env.SECRET)
         
-    } catch (error) {
-        return error.message
-    }
-}
+//     } catch (error) {
+//         return error.message
+//     }
+// }
 
 module.exports = mongoose.model("User", UserSchema)
