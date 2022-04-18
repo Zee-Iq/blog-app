@@ -1,21 +1,21 @@
 import "./SinglePost.css";
-import { useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
 const SinglePost = () => {
   const location = useLocation();
- /*  const path = location.pathname.split("/")[2]; */
-  const { postId } = useParams()
+  /*  const path = location.pathname.split("/")[2]; */
+  const { postId } = useParams();
   const [post, setPost] = useState({});
 
-console.log(postId);
+  console.log(postId);
 
   useEffect(() => {
     const getPost = async () => {
       const res = await axios.get("/posts/" + postId);
       setPost(res.data);
-      console.log(res)
+      console.log(res);
     };
     getPost();
   }, [postId]);
@@ -35,7 +35,10 @@ console.log(postId);
         </h1>
         <div className="singlePostInfo">
           <span className="singlePostAuthor">
-            Author: <b>{post.username}</b>
+            Author:
+            <Link to={`/?user=${post.username}`} className="link">
+              <b>{post.username}</b>
+            </Link>
           </span>
           <span className="singlePostDate ">
             {new Date(post.createdAt).toDateString()}
