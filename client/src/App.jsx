@@ -29,7 +29,7 @@ const App = () => {
           element={user ? <UserProfile /> : <Register />}
         ></Route>
          <Route path="/post" element={<Single />}> </Route> 
-         <Route path="/emailconfirm/:token" exact element={<EmailConfirm />}></Route>
+         {/* <Route path="/emailconfirm/:token" exact element={<EmailConfirm />}></Route> */}
          {/* <Route path='/forgotpass' exact component={}></Route> */}
          
       </Routes>
