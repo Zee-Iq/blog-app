@@ -5,11 +5,13 @@ const Post = ({ post }) => {
   const PF = "http://localhost:5500/images/";
   return (
     <div className="post">
-      {post.photo && <img className="postImg" src={PF + post.postImg} alt="" />}
+      {post.postImg && <img className="postImg" src={PF + post.postImg} alt="" />}
       <div className="postInfo">
         <div className="postCats">
           {post.categories.map((c) => (
-            <span key={c.name} className="postCat">{c.name}</span>
+            <span key={c.name} className="postCat">
+              {c.name}
+            </span>
           ))}
         </div>
         <Link to={`/post/${post._id}`} className="link">

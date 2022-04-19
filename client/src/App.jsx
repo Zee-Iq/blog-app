@@ -7,10 +7,12 @@ import Login from "./Components/Login/Login";
 import Write from "./Components/Write/Write";
 import UserProfile from "./Components/UserProfile/UserProfile";
 import Single from "./Components/Single/Single";
+import { useContext } from "react";
+import { Context } from "./Context/Context";
 
-const user = false;
 
 const App = () => {
+  const { user } = useContext(Context) ;
   return (
     <Router>
       <TopBar />
@@ -26,8 +28,9 @@ const App = () => {
           path="/userprofile"
           element={user ? <UserProfile /> : <Register />}
         ></Route>
-         <Route path="/post/:postId" element={<Single />}> </Route> 
-         
+        <Route path="/post/:postId" element={<Single />}>
+          {" "}
+        </Route>
       </Routes>
     </Router>
   );

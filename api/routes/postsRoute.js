@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const User = require("../models/UserModel");
 const Post = require("../models/PostModel");
-const { json } = require("express");
 
 //CREATE POST
 router.post("/", async (req, res) => {
@@ -33,7 +32,9 @@ router.put("/:id", async (req, res) => {
         res.status(500).json(err);
       }
     } else {
-      res.status(401).json("Unauthorized action, you can update only your post!");
+      res
+        .status(401)
+        .json("Unauthorized action, you can update only your post!");
     }
   } catch (err) {
     res.status(500).json(err);
@@ -92,7 +93,5 @@ router.get("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-module.exports = router;
 
 module.exports = router;
