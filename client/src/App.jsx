@@ -10,9 +10,8 @@ import Single from "./Components/Single/Single";
 import { useContext } from "react";
 import { Context } from "./Context/Context";
 
-
 const App = () => {
-  const { user } = useContext(Context) ;
+  const { user } = useContext(Context);
   return (
     <Router>
       <TopBar />
@@ -28,9 +27,7 @@ const App = () => {
           path="/userprofile"
           element={user ? <UserProfile /> : <Register />}
         ></Route>
-        <Route path="/post/:postId" element={<Single />}>
-          {" "}
-        </Route>
+        <Route path="/post/:postId" element={<Single />}></Route>
       </Routes>
     </Router>
   );

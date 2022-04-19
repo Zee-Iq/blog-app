@@ -21,6 +21,7 @@ export default function SinglePost() {
       setPost(res.data);
       setTitle(res.data.title);
       setDesc(res.data.desc);
+      console.log(res.data)
     };
     getPost();
   }, [path]);
@@ -45,11 +46,13 @@ export default function SinglePost() {
     } catch (err) {}
   };
 
+
+
   return (
     <div className="singlePost">
       <div className="singlePostWrapper">
-        {post.photo && (
-          <img src={PF + post.photo} alt="" className="singlePostImg" />
+        {post.postImg && (
+          <img src={PF + post.postImg} alt="" className="singlePostImg" />
         )}
         {updateMode ? (
           <input

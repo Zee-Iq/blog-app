@@ -1,10 +1,30 @@
 const router = require("express").Router();
 const User = require("../models/UserModel");
 const Post = require("../models/PostModel");
+const multer = require("multer")
+
+//MULTER
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "images");
+  },
+  filename: (req, file, cb) => {
+    cb(null, req.body.name);
+  },
+});
+
+const upload = multer({ storage: storage });
+/* app.post("/api/upload",  (req, res) => {
+  res.status(200).json("File has been uploaded");
+});
+ */
+
 
 //CREATE POST
-router.post("/", async (req, res) => {
+router.post("/",  async (req, res) => {
   const newPost = new Post(req.body);
+  
+  console.log("HELLO FROM .POST",req.body)
   try {
     const savedPost = await newPost.save();
     res.status(200).json(savedPost);
@@ -66,6 +86,7 @@ router.get("/:id", async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
     res.status(200).json(post);
+    console.log(post)
   } catch (err) {
     res.status(500).json(err);
   }
