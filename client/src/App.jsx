@@ -7,16 +7,16 @@ import Login from "./Components/Login/Login";
 import Write from "./Components/Write/Write";
 import UserProfile from "./Components/UserProfile/UserProfile";
 import Single from "./Components/Single/Single";
-import Tags from "./Components/Tags/Tags";
+import { useContext } from "react";
+import { Context } from "./Context/Context";
 
-const user = true;
-/* test */
+
 const App = () => {
+  const { user } = useContext(Context) ;
   return (
     <Router>
       <TopBar />
       <Routes>
-        <Route path="/tagexample" element={<Tags />} > </Route>
         <Route path="/" element={<Homepage />}></Route>
         <Route
           path="/register"
@@ -28,10 +28,9 @@ const App = () => {
           path="/userprofile"
           element={user ? <UserProfile /> : <Register />}
         ></Route>
-         <Route path="/post" element={<Single />}> </Route> 
-         <Route path="/emailconfirm/:token" exact element={<EmailConfirm />}></Route>
-         {/* <Route path='/forgotpass' exact component={}></Route> */}
-         
+        <Route path="/post/:postId" element={<Single />}>
+          {" "}
+        </Route>
       </Routes>
     </Router>
   );
